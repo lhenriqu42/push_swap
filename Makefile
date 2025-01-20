@@ -28,7 +28,11 @@ HEADER_PATH := ./includes/
 # SOURCES AND OBJECTS
 FILES := \
 	main.c \
-	error.c
+	init.c \
+	stack.c \
+	utils.c \
+	error.c \
+	validation.c 
 SRCS := $(addprefix $(SRC_PATH), $(FILES))
 OBJS := $(addprefix $(BIN_PATH), $(FILES:%.c=%.o))
 

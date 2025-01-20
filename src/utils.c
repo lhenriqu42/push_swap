@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/20 14:29:26 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/20 16:58:38 by lhenriqu         ###   ########.fr       */
+/*   Created: 2025/01/20 15:44:16 by lhenriqu          #+#    #+#             */
+/*   Updated: 2025/01/20 17:15:05 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	print_error(char *message)
+t_body	*get_body()
 {
-	ft_printf_fd(STDERR_FILENO, C_ERROR "%s\n" C_BREAK, message);
+	static t_body	body;
+
+	return (&body);
 }
 
-void	handle_error(void)
+size_t stack_len(t_stack *node)
 {
-	print_error("Error");
-	exit(EXIT_FAILURE);
+	size_t	len;
+	
+	len = 0;
+	while(node)
+	{
+		len++;
+		node = node->next;
+	}
+	return (len);
 }
