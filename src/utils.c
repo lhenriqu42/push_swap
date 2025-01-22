@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 15:44:16 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/20 17:15:05 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/22 16:03:21 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,16 @@ size_t stack_len(t_stack *node)
 	while(node)
 	{
 		len++;
-		node = node->next;
+		node = node->down;
 	}
 	return (len);
+}
+
+void	free_stack(t_stack **stack)
+{
+	if (*stack == NULL)
+		return ;
+	free_stack(&((*stack)->down));
+	free(*stack);
+	*stack = NULL;
 }

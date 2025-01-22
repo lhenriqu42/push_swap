@@ -6,18 +6,18 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 17:01:29 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/20 17:12:19 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/22 15:18:40 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_stack	*get_last_node(t_stack *node)
+t_stack	*get_last_node(t_stack *node)
 {
 	if (node == NULL)
 		handle_error();
-	while(node->next)
-		node = node->next;
+	while(node->down)
+		node = node->down;
 	return (node);
 }
 
@@ -43,7 +43,23 @@ void	link_node(t_stack **stack, int value)
 	else
 	{
 		last_node = get_last_node(*stack);
-		last_node->next = new_node;
-		new_node->prev = last_node;
+		last_node->down = new_node;
+		new_node->up = last_node;
 	}
+}
+
+t_bool	is_ordered(t_stack *stack)
+{
+	t_stack	*temp;
+
+	if (stack == NULL)
+		return (false);
+	temp = stack;
+	while (temp->down)
+	{
+		if (temp->n > temp->down->n)
+			return (false);
+		temp = temp->down;
+	}
+	return (true);
 }
