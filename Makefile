@@ -24,6 +24,7 @@ LIB_NAME := libft.a
 SRC_PATH := ./src/
 BIN_PATH := ./bin/
 HEADER_PATH := ./includes/
+CMD_PATH := cmd/
 
 # SOURCES AND OBJECTS
 FILES := \
@@ -32,7 +33,12 @@ FILES := \
 	stack.c \
 	utils.c \
 	error.c \
-	validation.c 
+	validation.c \
+	small_sort.c \
+	$(CMD_PATH)push.c \
+	$(CMD_PATH)swap.c \
+	$(CMD_PATH)rotate.c \
+	$(CMD_PATH)rotate_reverse.c 
 SRCS := $(addprefix $(SRC_PATH), $(FILES))
 OBJS := $(addprefix $(BIN_PATH), $(FILES:%.c=%.o))
 
@@ -47,7 +53,7 @@ ifeq ($(wildcard $(LIB_PATH)/$(LIB_NAME)),)
 endif
 
 $(BIN_PATH):
-	@mkdir -p $(BIN_PATH)
+	@mkdir -p $(BIN_PATH)$(CMD_PATH)
 
 print:
 ifeq ($(wildcard $(NAME)),)

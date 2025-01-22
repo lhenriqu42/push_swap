@@ -6,13 +6,34 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 15:26:37 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/20 15:42:04 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/22 16:29:00 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_validate_args(char *argv[])
+static void	ft_check_duplication(char *argv[])
+{
+	int		number;
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	while (argv[i])
+	{
+		number = ft_atoi(argv[i]);
+		j = i + 1;
+		while (argv[j])
+		{
+			if (number == ft_atoi(argv[j]))
+				handle_error();
+			j++;
+		}
+		i++;
+	}
+}
+
+static void ft_check_sintax(char *argv[])
 {
 	char *number;
 	int	i;
@@ -34,4 +55,10 @@ void	ft_validate_args(char *argv[])
 		}
 		i++;
 	}
+}
+
+void	ft_validate_args(char *argv[])
+{
+	ft_check_sintax(argv);
+	ft_check_duplication(argv);
 }

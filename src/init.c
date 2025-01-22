@@ -6,14 +6,14 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 14:50:35 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/22 14:49:03 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/22 16:37:02 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 
-void	set_position(t_stack *stack)
+void	update_positions(t_stack *stack)
 {
 	int	i;
 	
@@ -41,4 +41,5 @@ void	ft_init_numbers(char *argv[])
 		i++;
 	}
 	body->length_a = stack_len(body->stack_a);
+	update_positions(body->stack_a);
 }

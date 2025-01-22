@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 14:12:57 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/22 16:02:29 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/22 16:41:53 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,11 +84,12 @@ void		free_stack(t_stack **stack);
 t_bool		is_ordered(t_stack *stack);
 size_t		stack_len(t_stack *node);
 
+void	small_sort(t_body *ps);
 void	push(t_push type);
 void	swap(t_swap type);
 void	rotate(t_rotate type);
 void	rev_rotate(t_rev_rotate type);
-
+void	update_positions(t_stack *stack);
 
 t_body		*get_body();
 
