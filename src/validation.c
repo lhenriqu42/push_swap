@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 15:26:37 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/22 16:29:00 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/23 14:32:41 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	ft_check_duplication(char *argv[])
 	size_t	i;
 	size_t	j;
 
-	i = 0;
+	i = 1;
 	while (argv[i])
 	{
 		number = ft_atoi(argv[i]);

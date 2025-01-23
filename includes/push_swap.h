@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 14:12:57 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/22 16:41:53 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/23 14:47:38 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void		clear_and_exit(t_body *push_swap);
 void		ft_init_numbers(char *argv[]);
 void		ft_validate_args(char *argv[]);
 void		link_node(t_stack **stack, int value);
-void		free_stack(t_stack **stack);
+void		free_stack(t_stack *stack);
 t_bool		is_ordered(t_stack *stack);
 size_t		stack_len(t_stack *node);
 

@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 14:29:26 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/22 12:57:45 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/23 14:35:48 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	handle_error(void)
 void	clear_and_exit(t_body *push_swap)
 {
 	if (push_swap->stack_a)
-		free_stack(&push_swap->stack_a);
+		free_stack(&(push_swap->stack_a));
 	if (push_swap->stack_b)
-		free_stack(&push_swap->stack_b);
+		free_stack(&(push_swap->stack_b));
 	exit(EXIT_SUCCESS);
 }
