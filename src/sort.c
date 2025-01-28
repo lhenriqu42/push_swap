@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 11:14:42 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/28 13:33:04 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/28 17:05:25 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,7 @@ void sort(t_body *ps)
             check = check->down;
         }
         while(smallest != ps->stack_a)
-        {
-            if(smallest->position)
             rotate(ra);
-        }
         push(pb);
         i++;
     }
