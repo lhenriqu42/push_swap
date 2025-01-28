@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 11:14:42 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/23 14:25:43 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/28 13:02:19 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,17 @@ void sort(t_body *ps)
         while(smallest != ps->stack_a)
         {
             rotate(ra);
+            // check_nodes(ps->stack_a);
         }
-        push(pa);
+        // check_nodes(ps->stack_b);
+        push(pb);
+        // check_nodes(ps->stack_a);
         i++;
     }
     i = 0;
     while(i < ps->length_a)
     {
-        push(pb);
+        push(pa);
         i++;
     }
 }

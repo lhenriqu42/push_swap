@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 14:12:57 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/23 14:47:38 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/28 12:02:17 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ typedef enum e_bool
 // STRUCTS
 typedef struct s_stack
 {
+	struct s_stack	*ID;
 	int				n;
 	int				position;
 	struct s_stack	*up;
@@ -83,6 +84,8 @@ void		link_node(t_stack **stack, int value);
 void		free_stack(t_stack *stack);
 t_bool		is_ordered(t_stack *stack);
 size_t		stack_len(t_stack *node);
+
+void	check_nodes(t_stack *stack);
 
 void	small_sort(t_body *ps);
 void	push(t_push type);

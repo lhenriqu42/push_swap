@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 17:01:29 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/22 15:18:40 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/28 12:03:05 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ static t_stack	*create_node(int value)
 	if (new_node == NULL)
 		handle_error();
 	new_node->n = value;
+	new_node->ID = new_node;
 	return (new_node);
 }
 

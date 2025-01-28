@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 15:26:37 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/23 14:32:41 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/28 11:48:58 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,24 @@ void	ft_validate_args(char *argv[])
 {
 	ft_check_sintax(argv);
 	ft_check_duplication(argv);
+}
+void	check_nodes(t_stack *stack)
+{
+	int i = 0;
+	t_stack *temp = NULL;
+
+	ft_printf("Stack Content: \n");
+	while(stack && i <= 15)
+	{
+		ft_printf("%i: %i\n", i, stack->n);
+		i++;
+		temp = stack;
+		stack = stack->down;
+	}
+	// ft_printf("###################\n");
+	while(temp && --i >= 0)
+	{
+		// ft_printf("%i: %i\n", i, temp->n);
+		temp = temp->up;
+	}
 }
