@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 14:12:57 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/28 13:40:11 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/28 16:42:01 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define PUSH_SWAP_H
 
 # include "../libs/libft/libft.h"
+
+#include <limits.h>
 
 // COLORS
 # define C_SUCCESS "\033[32;3m"
@@ -63,6 +65,7 @@ typedef struct s_stack
 	struct s_stack	*ID;
 	int				n;
 	int				position;
+	int				sorted_position;
 	struct s_stack	*up;
 	struct s_stack	*down;
 }					t_stack;
@@ -90,7 +93,7 @@ void	check_nodes(t_stack *stack);
 void	small_sort(t_body *ps);
 void	push(t_push type);
 void	swap(t_swap type);
-void sort(t_body *ps);
+void	sort(t_body *ps);
 void	rotate(t_rotate type);
 void	rev_rotate(t_rev_rotate type);
 void	update_positions(t_stack *stack);
