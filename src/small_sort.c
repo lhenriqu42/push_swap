@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 16:33:16 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/28 14:43:49 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:48:58 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void	sort_three(t_body *ps)
 
 void	small_sort(t_body *ps)
 {
-	if (ps->length_a == 2)
+	if (ps->size == 2)
 		swap(sa);
-	else if (ps->length_a == 3)
+	else if (ps->size == 3)
 		sort_three(ps);
 	else
 		sort_few_elements(ps);

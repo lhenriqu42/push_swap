@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 14:12:57 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/28 16:42:01 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:45:58 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,34 +23,6 @@
 # define C_BREAK "\033[0m"
 
 
-// COMMANDS
-typedef enum e_push
-{
-	pa,
-	pb
-}	t_push;
-
-typedef enum e_swap
-{
-	sa,
-	sb,
-	ss
-}	t_swap;
-
-typedef enum e_rotate
-{
-	ra,
-	rb,
-	rr
-}	t_rotate;
-
-typedef enum e_rev_rotate
-{
-	rra,
-	rrb,
-	rrr
-}	t_rev_rotate;
-
 // BOOLEAN
 typedef enum e_bool
 {
@@ -58,6 +30,36 @@ typedef enum e_bool
 	true
 }	t_bool;
 
+// CMD PUSH
+typedef enum e_push
+{
+	pa,
+	pb
+}	t_push;
+
+// CMD SWAP 
+typedef enum e_swap
+{
+	sa,
+	sb,
+	ss
+}	t_swap;
+
+// CMD ROTATE
+typedef enum e_rotate
+{
+	ra,
+	rb,
+	rr
+}	t_rotate;
+
+// CMD REVERSE ROTATE
+typedef enum e_rev_rotate
+{
+	rra,
+	rrb,
+	rrr
+}	t_rev_rotate;
 
 // STRUCTS
 typedef struct s_stack
@@ -74,12 +76,14 @@ typedef struct s_body
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	size_t	length_a;
-	size_t	length_b;
+	size_t	size;
+	int		key_nbr_factor;
+	int		key_nbr;
 }			t_body;
 
+
 void		handle_error(void);
-t_stack	*get_last_node(t_stack *node);
+t_stack		*get_last_node(t_stack *node);
 void		clear_and_exit(t_body *push_swap);
 void		ft_init_numbers(char *argv[]);
 void		ft_validate_args(char *argv[]);
@@ -94,10 +98,13 @@ void	small_sort(t_body *ps);
 void	push(t_push type);
 void	swap(t_swap type);
 void	sort(t_body *ps);
+void big_sort(t_body *ps);
 void	rotate(t_rotate type);
 void	rev_rotate(t_rev_rotate type);
 void	update_positions(t_stack *stack);
-
+t_stack	*get_min_node(t_stack *stack, int n);
+t_stack *get_min_position(t_stack *stack, int max);
+void	sort_three(t_body *ps);
 t_body		*get_body();
 
 #endif

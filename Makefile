@@ -36,6 +36,7 @@ FILES := \
 	error.c \
 	validation.c \
 	small_sort.c \
+	stack_utils.c \
 	$(CMD_PATH)push.c \
 	$(CMD_PATH)swap.c \
 	$(CMD_PATH)rotate.c \

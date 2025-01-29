@@ -13,19 +13,6 @@ void	update_positions(t_stack *stack)
 	}
 }
 
-static t_stack	*get_min_node(t_stack *stack, int n)
-{
-	t_stack	*min;
-
-	min = NULL;
-	while (stack)
-	{
-		if ((stack->n > n) && (!min || stack->n < min->n))
-			min = stack;
-		stack = stack->down;
-	}
-	return (min);
-}
 
 static void	assign_sorted_positions(t_stack *stack)
 {
@@ -60,10 +47,14 @@ void	ft_init_numbers(char *argv[])
 		link_node(&(ps->stack_a), value);
 		i++;
 	}
-	ps->length_a = stack_len(ps->stack_a);
+	ps->size = stack_len(ps->stack_a);
+	if (ps->size > 400)
+		ps->key_nbr_factor = ps->size / 4;
+	else
+		ps->key_nbr_factor = ps->size / 2;
+	ps->key_nbr = ps->key_nbr_factor;
 	update_positions(ps->stack_a);
 	assign_sorted_positions(ps->stack_a);
-
 	// for (t_stack *s = ps->stack_a; s; s = s->down)
 	// 	ft_printf("%i: %i\n", s->sorted_position, s->n);
 }
