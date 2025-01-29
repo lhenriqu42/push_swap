@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 14:12:57 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/29 11:45:58 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/29 16:22:34 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ typedef struct s_stack
 	struct s_stack	*ID;
 	int				n;
 	int				position;
+	int				cost_a;
+	int				cost_b;
 	int				sorted_position;
 	struct s_stack	*up;
 	struct s_stack	*down;
@@ -76,7 +78,7 @@ typedef struct s_body
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	size_t	size;
+	int		size;
 	int		key_nbr_factor;
 	int		key_nbr;
 }			t_body;
@@ -103,7 +105,9 @@ void	rotate(t_rotate type);
 void	rev_rotate(t_rev_rotate type);
 void	update_positions(t_stack *stack);
 t_stack	*get_min_node(t_stack *stack, int n);
+t_stack	*get_max_node(t_stack *stack);
 t_stack *get_min_position(t_stack *stack, int max);
+t_stack *get_min_greater_than(t_stack *stk_a, int position);
 void	sort_three(t_body *ps);
 t_body		*get_body();
 
