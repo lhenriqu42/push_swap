@@ -28,6 +28,7 @@ CMD_PATH := cmd/
 
 # SOURCES AND OBJECTS
 FILES := \
+	exec.c \
 	sort.c \
 	main.c \
 	init.c \

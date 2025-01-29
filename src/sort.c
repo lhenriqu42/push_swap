@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 11:14:42 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/29 16:20:49 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/29 16:55:39 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ static void sort_b(t_body *ps)
 		update_positions(ps->stack_a);
 		update_positions(ps->stack_b);
 		lst_assign_cost(ps->stack_a, ps->stack_b);
+		exec_cheapest_move(ps->stack_b);
+		size--;
 	}
 }
 
@@ -87,5 +89,5 @@ void sort(t_body *ps)
 	push_all_b(ps, 0, NULL);
 	sort_three(ps);
 	sort_b(ps);
-	
+	rotate_until_sorted(ps);
 }

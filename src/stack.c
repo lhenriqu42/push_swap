@@ -6,11 +6,36 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 17:01:29 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/29 11:21:05 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/29 17:02:02 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	rotate_until_sorted(t_body *ps)
+{
+	int size;
+	int moves_to_sort;
+	
+	update_positions(ps->stack_a);
+	moves_to_sort = get_min_position(ps->stack_a, 0)->position;
+	size = stack_len(ps->stack_a);
+	if (moves_to_sort > size / 2)
+		moves_to_sort = moves_to_sort - size;
+	while (moves_to_sort != 0)
+	{
+		if (moves_to_sort > 0)
+		{
+			rotate(ra);
+			moves_to_sort--;
+		}
+		else
+		{
+			rev_rotate(rra);
+			moves_to_sort++;
+		}
+	}
+}
 
 t_stack	*get_last_node(t_stack *node)
 {

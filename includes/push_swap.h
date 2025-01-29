@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 14:12:57 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/29 16:22:34 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/29 17:03:34 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,8 @@ size_t		stack_len(t_stack *node);
 
 void	check_nodes(t_stack *stack);
 
+void	exec_cheapest_move(t_stack *lst_b);
+t_stack	*get_cheapest_node(t_stack *stk_b);
 void	small_sort(t_body *ps);
 void	push(t_push type);
 void	swap(t_swap type);
@@ -109,6 +111,7 @@ t_stack	*get_max_node(t_stack *stack);
 t_stack *get_min_position(t_stack *stack, int max);
 t_stack *get_min_greater_than(t_stack *stk_a, int position);
 void	sort_three(t_body *ps);
+void	rotate_until_sorted(t_body *ps);
 t_body		*get_body();
 
 #endif
