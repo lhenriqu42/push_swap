@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 13:37:31 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/28 12:42:15 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/30 11:22:25 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,7 @@ void	push(t_push type)
 		exec_push(&ps->stack_b, &ps->stack_a);
 		ft_printf("pb\n");
 	}
+	print_stack();
+	update_positions(ps->stack_a);
+	update_positions(ps->stack_b);
 }

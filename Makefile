@@ -31,6 +31,7 @@ FILES := \
 	exec.c \
 	sort.c \
 	main.c \
+	test.print_stack.c \
 	init.c \
 	stack.c \
 	utils.c \

@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 14:12:32 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/29 16:23:06 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/30 11:06:53 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(int argc, char *argv[])
 	ft_validate_args(argv);
 	ft_init_numbers(argv);
 	ps = get_body();
+	print_stack();
 	if (!is_ordered(ps->stack_a))
 	{
 		if (ps->size <= 10)

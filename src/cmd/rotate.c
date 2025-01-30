@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 15:03:42 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/22 15:50:17 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/30 11:22:14 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,7 @@ void rotate(t_rotate type)
 		exec_rotate(&ps->stack_b);
 		ft_printf("rr\n");
 	}
+	print_stack();
+	update_positions(ps->stack_a);
+	update_positions(ps->stack_b);
 }

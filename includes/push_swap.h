@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 14:12:57 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/29 17:03:34 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/30 11:06:27 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,10 @@ t_stack *get_min_greater_than(t_stack *stk_a, int position);
 void	sort_three(t_body *ps);
 void	rotate_until_sorted(t_body *ps);
 t_body		*get_body();
+
+
+
+
+void	print_stack();
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 15:24:15 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/22 15:45:46 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/30 11:40:53 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 static void	exec_rev_rotate(t_stack **stack)
 {
-	t_stack	*new_first;
-
-	if (*stack == NULL || (*stack)->up == NULL)
+	t_stack *first_node;
+	t_stack *last_node;
+	
+	first_node = *stack;
+	if(stack_len(first_node) < 1)
 		return ;
-	new_first = get_last_node(*stack);
-    new_first->up->down = NULL;
-	new_first->up = NULL;
-    new_first->down = *stack;
-    (*stack)->up = new_first;
-    *stack = new_first;
+	last_node = get_last_node(first_node);
+	last_node->up->down = NULL;
+	last_node->up = NULL;
+	first_node->up = last_node;
+	last_node->down = first_node;
+	*stack = last_node;
 }
 
 void rev_rotate(t_rev_rotate type)
@@ -47,4 +49,7 @@ void rev_rotate(t_rev_rotate type)
 		exec_rev_rotate(&ps->stack_b);
 		ft_printf("rrr\n");
 	}
+	print_stack();
+	update_positions(ps->stack_a);
+	update_positions(ps->stack_b);
 }
