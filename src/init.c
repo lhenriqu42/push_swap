@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 12:38:30 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/30 12:50:48 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/30 15:54:19 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ void	update_positions(t_stack *stack)
 static void	assign_sorted_positions(t_stack *stack)
 {
 	t_stack	*min;
+	long	last_min;
 	int		i;
-	int		last_min;
 
 	i = 1;
-	last_min = INT_MIN;
+	last_min = LONG_MIN;
 	min = stack;
 	while (min)
 	{

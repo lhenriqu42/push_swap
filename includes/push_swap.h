@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 14:12:57 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/30 13:41:09 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/30 15:55:47 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ t_bool		is_ordered(t_stack *stack);
 t_stack		*get_max_node(t_stack *stack);
 t_stack		*get_last_node(t_stack *node);
 t_stack		*get_cheapest_node(t_stack *stk_b);
-t_stack		*get_min_node(t_stack *stack, int n);
+t_stack		*get_min_node(t_stack *stack, long n);
 t_stack		*get_min_position(t_stack *stack, int max);
 t_stack		*get_min_greater_than(t_stack *stk_a, int position);
 void		update_positions(t_stack *stack);
