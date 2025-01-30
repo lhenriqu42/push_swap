@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 14:12:57 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/30 11:06:27 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/30 12:51:39 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 
 # include "../libs/libft/libft.h"
 
-#include <limits.h>
+# include <limits.h>
 
 // COLORS
 # define C_SUCCESS "\033[32;3m"
 # define C_ERROR "\033[31;1m"
 # define C_BREAK "\033[0m"
-
 
 // BOOLEAN
 typedef enum e_bool
@@ -61,10 +60,9 @@ typedef enum e_rev_rotate
 	rrr
 }	t_rev_rotate;
 
-// STRUCTS
+// MAIN STRUCTS
 typedef struct s_stack
 {
-	struct s_stack	*ID;
 	int				n;
 	int				position;
 	int				cost_a;
@@ -83,40 +81,36 @@ typedef struct s_body
 	int		key_nbr;
 }			t_body;
 
-
+// UTILS FUNCTIONS
+t_body		*get_body(void);
 void		handle_error(void);
-t_stack		*get_last_node(t_stack *node);
+void		free_stack(t_stack *stack);
 void		clear_and_exit(t_body *push_swap);
+
+// STACK FUNCTIONS
+size_t		stack_len(t_stack *node);
+t_bool		is_ordered(t_stack *stack);
+t_stack		*get_max_node(t_stack *stack);
+t_stack		*get_last_node(t_stack *node);
+t_stack		*get_cheapest_node(t_stack *stk_b);
+t_stack		*get_min_node(t_stack *stack, int n);
+t_stack		*get_min_position(t_stack *stack, int max);
+t_stack		*get_min_greater_than(t_stack *stk_a, int position);
+void		update_positions(t_stack *stack);
+void		link_node(t_stack **stack, int value);
+
+// SORT FUNCTIONS
+void		sort(t_body *ps);
+void		push(t_push type);
+void		swap(t_swap type);
+void		rotate(t_rotate type);
+void		sort_three(t_body *ps);
+void		rev_rotate(t_rev_rotate type);
+void		rotate_until_sorted(t_body *ps);
+void		exec_cheapest_move(t_stack *lst_b);
+
+// INIT FUNCITONS
 void		ft_init_numbers(char *argv[]);
 void		ft_validate_args(char *argv[]);
-void		link_node(t_stack **stack, int value);
-void		free_stack(t_stack *stack);
-t_bool		is_ordered(t_stack *stack);
-size_t		stack_len(t_stack *node);
-
-void	check_nodes(t_stack *stack);
-
-void	exec_cheapest_move(t_stack *lst_b);
-t_stack	*get_cheapest_node(t_stack *stk_b);
-void	small_sort(t_body *ps);
-void	push(t_push type);
-void	swap(t_swap type);
-void	sort(t_body *ps);
-void big_sort(t_body *ps);
-void	rotate(t_rotate type);
-void	rev_rotate(t_rev_rotate type);
-void	update_positions(t_stack *stack);
-t_stack	*get_min_node(t_stack *stack, int n);
-t_stack	*get_max_node(t_stack *stack);
-t_stack *get_min_position(t_stack *stack, int max);
-t_stack *get_min_greater_than(t_stack *stk_a, int position);
-void	sort_three(t_body *ps);
-void	rotate_until_sorted(t_body *ps);
-t_body		*get_body();
-
-
-
-
-void	print_stack();
 
 #endif

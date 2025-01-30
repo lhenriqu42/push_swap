@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 17:01:29 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/29 17:02:02 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/30 12:50:25 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	rotate_until_sorted(t_body *ps)
 {
-	int size;
-	int moves_to_sort;
-	
+	int	size;
+	int	moves_to_sort;
+
 	update_positions(ps->stack_a);
 	moves_to_sort = get_min_position(ps->stack_a, 0)->position;
 	size = stack_len(ps->stack_a);
@@ -41,7 +41,7 @@ t_stack	*get_last_node(t_stack *node)
 {
 	if (node == NULL)
 		handle_error();
-	while(node->down)
+	while (node->down)
 		node = node->down;
 	return (node);
 }
@@ -54,7 +54,6 @@ static t_stack	*create_node(int value)
 	if (new_node == NULL)
 		handle_error();
 	new_node->n = value;
-	new_node->ID = new_node;
 	return (new_node);
 }
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/30 12:38:30 by lhenriqu          #+#    #+#             */
+/*   Updated: 2025/01/30 12:50:48 by lhenriqu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	update_positions(t_stack *stack)
@@ -13,7 +25,6 @@ void	update_positions(t_stack *stack)
 	}
 }
 
-
 static void	assign_sorted_positions(t_stack *stack)
 {
 	t_stack	*min;
@@ -26,7 +37,7 @@ static void	assign_sorted_positions(t_stack *stack)
 	while (min)
 	{
 		min = get_min_node(stack, last_min);
-		if(!min)
+		if (!min)
 			break ;
 		min->sorted_position = i++;
 		last_min = min->n;
@@ -55,6 +66,4 @@ void	ft_init_numbers(char *argv[])
 	ps->key_nbr = ps->key_nbr_factor;
 	update_positions(ps->stack_a);
 	assign_sorted_positions(ps->stack_a);
-	// for (t_stack *s = ps->stack_a; s; s = s->down)
-	// 	ft_printf("%i: %i\n", s->sorted_position, s->n);
 }

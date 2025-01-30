@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 11:14:42 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/30 11:14:46 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/30 12:41:49 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void	lst_assign_cost(t_stack *stk_a, t_stack *stk_b)
 	}
 }
 
-static void choose_rotate(int i)
+static void	choose_rotate(int i)
 {
 	if (i > 0)
 		rotate(ra);
@@ -43,7 +43,7 @@ static void choose_rotate(int i)
 		rev_rotate(rra);
 }
 
-static void push_all_b(t_body *ps, int i, t_stack *node)
+static void	push_all_b(t_body *ps, int i, t_stack *node)
 {
 	while (ps->size > 3)
 	{
@@ -69,12 +69,12 @@ static void push_all_b(t_body *ps, int i, t_stack *node)
 	}
 }
 
-static void sort_b(t_body *ps)
+static void	sort_b(t_body *ps)
 {
-	int size;
+	int	size;
 
 	size = stack_len(ps->stack_b);
-	while(size)
+	while (size)
 	{
 		update_positions(ps->stack_a);
 		update_positions(ps->stack_b);
@@ -84,7 +84,7 @@ static void sort_b(t_body *ps)
 	}
 }
 
-void sort(t_body *ps)
+void	sort(t_body *ps)
 {
 	push_all_b(ps, 0, NULL);
 	sort_three(ps);

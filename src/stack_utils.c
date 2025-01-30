@@ -6,13 +6,13 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 11:19:47 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/29 16:43:01 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/30 12:50:41 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack *get_min_greater_than(t_stack *stk_a, int position)
+t_stack	*get_min_greater_than(t_stack *stk_a, int position)
 {
 	t_stack	*min;
 
@@ -57,9 +57,9 @@ t_stack	*get_max_node(t_stack *stack)
 	return (max);
 }
 
-t_stack *get_min_position(t_stack *stack, int max)
+t_stack	*get_min_position(t_stack *stack, int max)
 {
-    if (max == 0)
+	if (max == 0)
 		return (get_min_node(stack, INT_MIN));
 	while (stack)
 	{

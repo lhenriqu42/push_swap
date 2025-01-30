@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 15:54:20 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/30 11:22:07 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/30 12:38:00 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	exec_swap(t_stack **stack)
 
 void	swap(t_swap type)
 {
-    t_body  *ps;
+	t_body	*ps;
 
 	ps = get_body();
 	if (type == sa)
@@ -51,7 +51,6 @@ void	swap(t_swap type)
 		exec_swap(&ps->stack_b);
 		ft_printf("ss\n");
 	}
-	print_stack();
 	update_positions(ps->stack_a);
 	update_positions(ps->stack_b);
 }

@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 13:37:31 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/30 11:22:25 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/30 12:51:14 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	exec_push(t_stack **dst, t_stack **src)
 		return ;
 	node = *src;
 	node_down = (*src)->down;
-	if(!node_down)
+	if (!node_down)
 		*src = NULL;
 	else
 	{
@@ -29,7 +29,7 @@ static void	exec_push(t_stack **dst, t_stack **src)
 		node_down->up = NULL;
 		*src = node_down;
 	}
-	if(!*dst)
+	if (!*dst)
 		*dst = node;
 	else
 	{
@@ -41,7 +41,7 @@ static void	exec_push(t_stack **dst, t_stack **src)
 
 void	push(t_push type)
 {
-	t_body  *ps;
+	t_body	*ps;
 
 	ps = get_body();
 	if (type == pa)
@@ -54,7 +54,6 @@ void	push(t_push type)
 		exec_push(&ps->stack_b, &ps->stack_a);
 		ft_printf("pb\n");
 	}
-	print_stack();
 	update_positions(ps->stack_a);
 	update_positions(ps->stack_b);
 }
