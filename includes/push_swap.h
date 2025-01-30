@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 14:12:57 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/30 12:51:39 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/30 12:55:29 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ void		push(t_push type);
 void		swap(t_swap type);
 void		rotate(t_rotate type);
 void		sort_three(t_body *ps);
+void		small_sort(t_body *ps);
 void		rev_rotate(t_rev_rotate type);
 void		rotate_until_sorted(t_body *ps);
 void		exec_cheapest_move(t_stack *lst_b);
