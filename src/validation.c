@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 15:26:37 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/30 16:31:47 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/30 16:45:32 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,12 @@ static void	ft_check_sintax(char *argv[])
 		j = 0;
 		if (!ft_isdigit(number[j]) && number[j] != '-' && number[j] != '+')
 			handle_error();
-		j++;
+		if (number[j] == '-' || number[j] == '+')
+		{
+			j++;
+			if (number[j] == '\0')
+				handle_error();
+		}
 		while (number[j])
 		{
 			if (!ft_isdigit(number[j]))
@@ -74,7 +79,7 @@ static void	ft_check_sintax(char *argv[])
 
 void	ft_validate_args(char *argv[])
 {
-	ft_check_int(argv);
 	ft_check_sintax(argv);
+	ft_check_int(argv);
 	ft_check_duplication(argv);
 }
