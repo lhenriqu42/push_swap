@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 15:26:37 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/30 12:47:30 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/30 16:31:47 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,21 @@ static void	ft_check_duplication(char *argv[])
 				handle_error();
 			j++;
 		}
+		i++;
+	}
+}
+
+static void	ft_check_int(char *argv[])
+{
+	long	number;
+	size_t	i;
+
+	i = 1;
+	while (argv[i])
+	{
+		number = ft_atol(argv[i]);
+		if (number > INT_MAX || number < INT_MIN)
+			handle_error();
 		i++;
 	}
 }
@@ -59,6 +74,7 @@ static void	ft_check_sintax(char *argv[])
 
 void	ft_validate_args(char *argv[])
 {
+	ft_check_int(argv);
 	ft_check_sintax(argv);
 	ft_check_duplication(argv);
 }
