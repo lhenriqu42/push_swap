@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 11:14:42 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/30 13:41:31 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/01/30 14:17:32 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,6 @@ void	sort(t_body *ps)
 	push_all_b(ps, 0, NULL);
 	sort_three(ps, NULL);
 	sort_b(ps);
-	rotate_until_sorted(ps);
+	if (!is_ordered(ps->stack_a))
+		rotate_until_sorted(ps);
 }
