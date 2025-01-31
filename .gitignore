@@ -1,3 +1,4 @@
 bin
 push_swap
 valgrind.log
+.vscode
