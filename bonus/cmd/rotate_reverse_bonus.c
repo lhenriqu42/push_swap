@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 15:24:15 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/31 12:12:33 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/02/03 10:40:25 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	exec_rev_rotate(t_stack **stack)
 	t_stack	*last_node;
 
 	first_node = *stack;
-	if (stack_len(first_node) < 1)
+	if (stack_len(first_node) <= 1)
 		return ;
 	last_node = get_last_node(first_node);
 	last_node->up->down = NULL;
