@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 15:44:16 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/30 12:47:09 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/02/06 11:22:54 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,18 @@ void	free_stack(t_stack *stack)
 		temp = stack->down;
 		free(stack);
 		stack = temp;
+	}
+}
+
+void	update_positions(t_stack *stack)
+{
+	int	i;
+
+	i = 0;
+	while (stack)
+	{
+		stack->position = i;
+		stack = stack->down;
+		i++;
 	}
 }

@@ -6,23 +6,28 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 12:38:30 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/30 15:54:19 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/02/06 11:57:04 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	update_positions(t_stack *stack)
+char	**get_args(int argc, char *argv[])
 {
-	int	i;
+	int		i;
+	char	*line;
+	char	**args;
 
 	i = 0;
-	while (stack)
+	line = ft_strdup("");
+	while (i < argc)
 	{
-		stack->position = i;
-		stack = stack->down;
-		i++;
+		line = ft_strjoin_with_free(line, argv[i++]);
+		line = ft_strjoin_with_free(line, " ");
 	}
+	args = ft_split(line, ' ');
+	free(line);
+	return (args);
 }
 
 static void	assign_sorted_positions(t_stack *stack)

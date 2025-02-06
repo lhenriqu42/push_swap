@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 14:12:57 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/01/31 13:13:52 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/02/06 11:36:13 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ typedef struct s_body
 	int		size;
 	int		key_nbr_factor;
 	int		key_nbr;
+	char	**argv;
 }			t_body;
 
 // UTILS FUNCTIONS
@@ -105,6 +106,7 @@ void		rev_rotate(t_rev_rotate type);
 // INIT FUNCITONS
 void		ft_init_numbers(char *argv[]);
 void		ft_validate_args(char *argv[]);
+char		**get_args(int argc, char *argv[]);
 
 // EXEC FUNCTIONS
 void		read_commands(void);
