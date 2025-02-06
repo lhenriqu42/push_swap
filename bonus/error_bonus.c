@@ -6,7 +6,7 @@
 /*   By: lhenriqu <lhenriqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 14:29:26 by lhenriqu          #+#    #+#             */
-/*   Updated: 2025/02/06 11:35:53 by lhenriqu         ###   ########.fr       */
+/*   Updated: 2025/02/06 12:43:54 by lhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ void	clear_and_exit(t_body *ps)
 		ft_free_matrix(ps->argv);
 	if (ps->stack_b)
 		free_stack(ps->stack_b);
+	clear_gnl_buffer(0);
 	exit(EXIT_SUCCESS);
 }
