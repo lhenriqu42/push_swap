@@ -141,4 +141,14 @@ valgrind: all
 	./$(NAME) 8 9 2 3 0 1 5 4 6 7
 	@cat $(VALGRIND_LOG)
 
-.PHONY: all clean fclean re print libft valgrind print_bonus
+valgrind_bonus: bonus
+	@valgrind --leak-check=full \
+	--show-reachable=yes \
+	--track-fds=yes \
+	--show-leak-kinds=all -s \
+	--track-origins=yes \
+	--log-file=$(VALGRIND_LOG) \
+	./$(BONUS_NAME) 8 9 2 3 0 1 5 4 6 7
+	@cat $(VALGRIND_LOG)
+
+.PHONY: all clean fclean re print libft valgrind print_bonus valgrind_bonus
